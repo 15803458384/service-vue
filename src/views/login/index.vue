@@ -3,9 +3,14 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
       <div class="title-container">
         <h3 class="title">
-          {{ $t('login.title') }}
+          <!-- {{ $t('login.title') }} -->
+          <img style="width:100%;" src="../../assets/img/logo/logo.png" alt="logo">
+          <img style="width:100%;display:none;" src="../../assets/img/bg/1.jpg" alt="logo">
+          <img style="width:100%;display:none;" src="../../assets/img/bg/2.jpg" alt="logo">
+          <img style="width:100%;display:none;" src="../../assets/img/bg/3.jpg" alt="logo">
+          <img style="width:100%;display:none;" src="../../assets/img/bg/4.jpg" alt="logo">
         </h3>
-        <lang-select class="set-language" />
+        <!-- <lang-select class="set-language" /> -->
       </div>
 
       <el-form-item prop="username">
@@ -43,7 +48,7 @@
       </el-button>
 
       <div style="position:relative">
-        <div class="tips">
+        <!-- <div class="tips">
           <span>{{ $t('login.username') }} : admin</span>
           <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
         </div>
@@ -56,7 +61,7 @@
 
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
           {{ $t('login.thirdparty') }}
-        </el-button>
+        </el-button> -->
       </div>
     </el-form>
 
@@ -72,12 +77,15 @@
 
 <script>
 import { validUsername } from '@/utils/validate'
-import LangSelect from '@/components/LangSelect'
+// import LangSelect from '@/components/LangSelect'
 import SocialSign from './socialsignin'
 
 export default {
   name: 'Login',
-  components: { LangSelect, SocialSign },
+  components: {
+    // LangSelect,
+    SocialSign
+  },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
@@ -220,11 +228,48 @@ $bg:#2d3a4b;
 $dark_gray:#889aa4;
 $light_gray:#eee;
 
+@keyframes bgCarousel {
+  10%{
+    background: url('../../assets/img/bg/2.jpg') no-repeat;
+    background-size: cover;
+  }
+  20%{
+    background: url('../../assets/img/bg/2.jpg') no-repeat;
+    background-size: cover;
+  }
+  30%{
+    background: url('../../assets/img/bg/3.jpg') no-repeat;
+    background-size: cover;
+  }
+  40%{
+    background: url('../../assets/img/bg/3.jpg') no-repeat;
+    background-size: cover;
+  }
+  50%{
+    background: url('../../assets/img/bg/4.jpg') no-repeat;
+    background-size: cover;
+  }
+  60%{
+    background: url('../../assets/img/bg/4.jpg') no-repeat;
+    background-size: cover;
+  }
+  80%{
+    background: url('../../assets/img/bg/1.jpg') no-repeat;
+    background-size: cover;
+  }
+  100%{
+    background: url('../../assets/img/bg/1.jpg') no-repeat;
+    background-size: cover;
+  }
+}
 .login-container {
   min-height: 100%;
   width: 100%;
   background-color: $bg;
+  background: url('../../assets/img/bg/1.jpg') no-repeat;
+  background-size: cover;
   overflow: hidden;
+  animation: bgCarousel 15s ease-in-out infinite alternate;
   .login-form {
     position: relative;
     width: 520px;

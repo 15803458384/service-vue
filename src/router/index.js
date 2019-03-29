@@ -12,6 +12,7 @@ import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import treeTableRouter from './modules/tree-table'
 import nestedRouter from './modules/nested'
+import goodsRouter from './modules/goods'
 
 /** note: sub-menu only appear when children.length>=1
  *  detail see  https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -172,6 +173,7 @@ export const asyncRoutes = [
   nestedRouter,
   tableRouter,
   treeTableRouter,
+  goodsRouter,
 
   {
     path: '/example',
