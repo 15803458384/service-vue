@@ -8,7 +8,7 @@ const goodsRouter = {
   redirect: 'noredirect',
   name: 'goods',
   meta: {
-    title: '商品管理',
+    title: 'goods',
     icon: 'goods'
   },
   children: [
@@ -16,13 +16,13 @@ const goodsRouter = {
       path: 'goods-info',
       name: 'GoodsInfo',
       component: () => import('@/views/goodsMsg/goodsInfo/index'),
-      meta: { title: '商品信息' }
+      meta: { title: 'GoodsInfo' }
     },
     {
       path: 'goods-batch',
       name: 'GoodsBatch',
       component: () => import('@/views/goodsMsg/goodsBatch/index'),
-      meta: { title: '商品批处理' }
+      meta: { title: 'GoodsBatch' }
     }
   ]
 }
